@@ -128,11 +128,18 @@
         
     把本地库上传到码云输入：
         注意：$ git push -u origin master    //第一次要加-u和默认远程服务器名字origin，
+        
+        有时push或pull会出现错误”fatal: refusing to merge unrelated histories”
+            故我们加上一些命令：$ git pull origin master --allow-unrelated-histories
+        
         $ git push origin master     //这条命令是说把本地master传到origin，以后上传就可以用这种简洁的方式。
+        
         如果想同时连接github和gitee的操作如下：
-	    git remote -v    //查看当前已经连接的远程库。
-        由于第一个连接的远程库，系统默认取了origin的名字，所以我们先删除这个远程连接，之后重新建立连接自己取名字。
-        git remote rm origin   //删除一个远程库连接。
+	        git remote -v    //查看当前已经连接的远程库。
+                由于第一个连接的远程库，系统默认取了origin的名字，所以我们先删除这个远程连接，之后重新建立连接自己取名字。
+        
+        $ git remote rm origin   //删除一个远程库连接。
+        
         $ git remote add <name> <网址>  //name自己取，github或者gitee
         
         有时推送会有错误，可能本地合并分支造成和远程信息不一致导致的，可以先pull过来，在push本地资料到远程。
