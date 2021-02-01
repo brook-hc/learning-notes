@@ -122,12 +122,18 @@
 
 
 六、连接远程库
-        码云上创建一个新库后，在本地bash中输入以下内容就可以建立连接：
+      码云上创建一个新库后，在本地bash中输入以下内容就可以建立连接：
     $ git remote add origin https://gitee.com/he-chuan/learn-git.git
+	注意：origin是系统默认取得名字，我们可以自己取。
+        
     把本地库上传到码云输入：
-    $ git push -u origin master    
-    //第一次要加-u和默认远程服务器名字origin，
-    $ git push origin master     //这条命令是说把本地master传到origin，以后上传就可以用这种简洁的方式。
+        注意：$ git push -u origin master    //第一次要加-u和默认远程服务器名字origin，
+        $ git push origin master     //这条命令是说把本地master传到origin，以后上传就可以用这种简洁的方式。
+        如果想同时连接github和gitee的操作如下：
+	    git remote -v    //查看当前已经连接的远程库。
+        由于第一个连接的远程库，系统默认取了origin的名字，所以我们先删除这个远程连接，之后重新建立连接自己取名字。
+        git remote rm origin   //删除一个远程库连接。
+        $ git remote add <name> <网址>  //name自己取，github或者gitee
 
 七、创建与合并分支
     Git鼓励大量使用分支：
