@@ -134,6 +134,9 @@
         由于第一个连接的远程库，系统默认取了origin的名字，所以我们先删除这个远程连接，之后重新建立连接自己取名字。
         git remote rm origin   //删除一个远程库连接。
         $ git remote add <name> <网址>  //name自己取，github或者gitee
+        
+        有时推送会有错误，可能本地合并分支造成和远程信息不一致导致的，可以先pull过来，在push本地资料到远程。
+        $ git pull gitee master         //从远程复制到本地。注意与clone的区别。
 
 七、创建与合并分支
     Git鼓励大量使用分支：
