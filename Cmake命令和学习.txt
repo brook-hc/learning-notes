@@ -1,0 +1,19 @@
+#CMakeLists.txt文件的编写：
+set(CMAKE_CXX_STANDARD 17)   #设置c++标准，必须放在最上面。
+cmake_minimum_required(VERSION 3.0)
+SET(CMAKE_CXX_FLAGS "-g -Wall")    # -g添加可调试功能  -Wall产生警告。
+project(shoot)
+include_directories(${CMAKE_SOURCE_DIR}/include)   #${}表示取大括号中的值，CMAKE_SOURCE_DIR表示打开文件夹的目录。
+add_executable(shoot main.cpp src/gun.cpp src/soldier.cpp)
+
+#windows下编译：
+#1、先建立build文件夹
+#2、cd build
+#3、cmake ..  解析上层目录的CMakeLists文件，之后build文件夹里就会有Makefile文件.
+#4、cmake --build .   生成可执行文件。
+
+#linux下编译：
+#1、创建build文件夹
+#2、cd build
+#3、cmake ..   解析上层目录的CMakeLists.txt文件，并在build下生成Makefile文件。
+#4、make   生成可执行文件。
