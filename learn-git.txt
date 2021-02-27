@@ -39,11 +39,13 @@
     和把大象放到冰箱需要3步相比，把一个文件放到Git仓库只需要两步。
     第一步，用命令git add告诉Git，把文件添加到仓库：
     $ git add readme.txt
-    第二步，用命令git commit告诉Git，把文件提交到仓库：
-    $ git commit -m "wrote a readme file"  //只会提交临时库的文件，而工作区的修改不会提交给版本库。
-    [master (root-commit) eaadf4e] wrote a readme file 
-    1 file changed, 2 insertions(+) 
-    create mode 100644 readme.txt
+        第二步，用命令git commit告诉Git，把文件提交到仓库：
+    $ git commit -m "wrote a readme file"  
+        1、只会提交临时库的文件，而工作区的修改不会提交给版本库。
+        2、如果本地删除一个文件，想让远程服务器也删除该文件，那就不用add了，直接用这条命令就可以。然后再push到远程。
+            [master (root-commit) eaadf4e] wrote a readme file 
+            1 file changed, 2 insertions(+) 
+            create mode 100644 readme.txt
 
     简单解释一下git commit命令，-m后面输入的是本次提交的说明，可以输入任意内容，当然最好是有意义的，这样你就能从历史记录里方便地找到改动记录。
 
@@ -59,10 +61,10 @@
 
     现在，运行git status命令看看结果：
     $ git status         //只查看当前工作区和临时库的状况。版本库信息不会显视。  
-    On branch master
-    Changes not staged for commit:     //修改没有stage（临时库），故不会去仓库。
-    (use "git add <file>..." to update what will be committed)
-    (use "git checkout -- <file>..." to discard changes in working directory)
+        On branch master
+        Changes not staged for commit:     //修改没有stage（临时库），故不会去仓库。
+        (use "git add <file>..." to update what will be committed)
+        (use "git checkout -- <file>..." to discard changes in working directory)
 
         modified:   readme.txt
 
